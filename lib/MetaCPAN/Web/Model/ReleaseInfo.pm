@@ -195,8 +195,8 @@ sub groom_irc {
                     : $port ? ":$port"
                     :         q{}
                     );
-                $irc_info->{web}
-                    = "https://chat.mibbit.com/?channel=${channel}&server=${server}";
+                $channel =~ s/^%23//;
+                $irc_info->{web} = "https://kiwiirc.com/client/${server}/${channel}";
             }
         }
     }
